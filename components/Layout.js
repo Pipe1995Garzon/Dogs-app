@@ -1,8 +1,9 @@
 import React from 'react';
-import {View, StyleSheet} from 'react-native';
+import {View, StyleSheet,StatusBar} from 'react-native';
 const Layout = ({children})=>{
   return(
     <View style={styles.container}>
+      <StatusBar backgroundColor='#476062'/>
       {children}
     </View>
   )
@@ -10,7 +11,7 @@ const Layout = ({children})=>{
 
 const styles = StyleSheet.create({
   container:{
-    backgroundColor: "#476062",
+    backgroundColor: "#EC90A1",
     padding: 20,
     flex:1,
     alignItems:'center',

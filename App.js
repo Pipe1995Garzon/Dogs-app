@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState} from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { View, Text,TouchableOpacity } from 'react-native';
@@ -17,7 +17,7 @@ const App = ()=>{
           name="HomeScreen"
           component={HomeScreen}
           options={({ navigation })=>({
-            title: 'Dogs adopta',
+            title: 'Dogs adopta 🐾',
             headerStyle: {backgroundColor:'#476062'},
             headerTitleStyle:{color:'#fff'},
             headerRight:()=>(
@@ -31,7 +31,10 @@ const App = ()=>{
           name="HistoryScreen"
           component={HistoryScreen}
           options={{
-            title: 'Dogs Historias'
+            title: 'Dogs Historias',
+            headerStyle: {backgroundColor:'#476062'},
+            headerTitleStyle:{color:'#fff'},
+            headerTintColor:'#fff'
           }}
         />
       </Stack.Navigator>
