@@ -1,9 +1,9 @@
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { View, Text } from 'react-native';
+import { View, Text,TouchableOpacity } from 'react-native';
 import HomeScreen from './screens/HomeScreen';
-import SendComent from './screens/SendComent';
+import HistoryScreen from './screens/HistoryScreen';
 
 
 
@@ -13,8 +13,27 @@ const App = ()=>{
   return(
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="HomeScreen" component={HomeScreen}/>
-        <Stack.Screen name="SendComent" component={SendComent}/>
+        <Stack.Screen
+          name="HomeScreen"
+          component={HomeScreen}
+          options={({ navigation })=>({
+            title: 'Dogs adopta',
+            headerStyle: {backgroundColor:'#476062'},
+            headerTitleStyle:{color:'#fff'},
+            headerRight:()=>(
+               <TouchableOpacity onPress={()=>navigation.navigate("HistoryScreen")}>
+                 <Text style={{color: '#fff',marginRight: 20, fontSize: 15}}>Historias</Text>
+               </TouchableOpacity>
+             ),
+          })}
+        />
+        <Stack.Screen
+          name="HistoryScreen"
+          component={HistoryScreen}
+          options={{
+            title: 'Dogs Historias'
+          }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   )

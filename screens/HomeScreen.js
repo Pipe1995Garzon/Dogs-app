@@ -1,7 +1,8 @@
 import React,{useEffect, useState} from 'react';
 import {View} from 'react-native';
 import {obtenerMascotas} from '../api';
-import PetList from '../components/Petslist'
+import Layout from '../components/Layout';
+import PetList from '../components/Petslist';
 
 const HomeScreen = ()=>{
 
@@ -17,9 +18,9 @@ const HomeScreen = ()=>{
   },[])
 
   return(
-    <View>
+    <Layout>
       <PetList mascotas={mascotas}/>
-    </View>
+    </Layout>
   )
 }
 
