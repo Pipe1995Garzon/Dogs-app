@@ -5,12 +5,13 @@ const PetsItem = ({mascota})=>{
     //boton de accion para llamar a preguntar por la mascota
     const handleCallPress = async()=>{
       //Linking.openURL("tel:+573162993564" );
-      await Linking.openURL(`tel:+57${mascota.numero_contacto}`);
+      await Linking.openURL(`tel:${mascota.numero_contacto}`);
     }
 
     //boton de accion para preguntar por la mascota handleWhatsAppPress
     const handleWhatsAppPress = async()=>{
-      await Linking.openURL(`https://wa.me/${mascota.numero_contacto}`)
+      //await Linking.openURL(`https://wa.me/${mascota.numero_contacto}`)
+      await Linking.openURL(`https://wa.me/?text=Hola vi tu publicacion en Dogs!!!. Me interesa adoptar a ${mascota.nombre}`)
     }
 
     return(
@@ -23,8 +24,8 @@ const PetsItem = ({mascota})=>{
         <Text style={styles.itemName}>Edad: {mascota.edad}</Text>
         <Text style={styles.itemName}>Pregunta por: {mascota.usuario}</Text>
         <Text style={styles.itemName}>Numero decontacto: {mascota.numero_contacto}</Text>
-        <Button title="contactar" color="#f194ff" onPress={handleCallPress} />
-        <Button title="WhatsApp" color="#f194ff" onPress={handleWhatsAppPress} />
+        <Button title="contactar 📞"  color="#f194ff" onPress={handleCallPress}/>
+        <Button title="WhatsApp" color="#33D858" onPress={handleWhatsAppPress} />
       </View>
     )
 }
